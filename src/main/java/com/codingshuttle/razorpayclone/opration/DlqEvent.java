@@ -1,24 +1,23 @@
 package com.codingshuttle.razorpayclone.opration;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
 public class DlqEvent {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    UUID id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  UUID id;
 
-    @OneToOne
-    @JoinColumn(name = "webhook_event_id", nullable = false)
-    WebhookEvent webhookEvent;
+  @OneToOne
+  @JoinColumn(name = "webhook_event_id", nullable = false)
+  WebhookEvent webhookEvent;
 
-    UUID merchantId;
+  UUID merchantId;
 
-    String finalError;
+  String finalError;
 
-    LocalDateTime movedAt;
+  LocalDateTime movedAt;
 }

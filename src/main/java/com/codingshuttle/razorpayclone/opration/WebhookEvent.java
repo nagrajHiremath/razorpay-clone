@@ -2,20 +2,19 @@ package com.codingshuttle.razorpayclone.opration;
 
 import com.codingshuttle.razorpayclone.common.enums.PaymentEvent;
 import jakarta.persistence.*;
-
 import java.util.UUID;
 
 @Entity
 public class WebhookEvent {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    UUID id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  UUID id;
 
-    UUID merchantId;
+  UUID merchantId;
 
-    @Enumerated(EnumType.STRING)
-    PaymentEvent event;
+  @Enumerated(EnumType.STRING)
+  PaymentEvent event;
 
-    String targetUrl;
+  String targetUrl;
 }

@@ -3,32 +3,30 @@ package com.codingshuttle.razorpayclone.payment;
 import com.codingshuttle.razorpayclone.common.entity.Money;
 import com.codingshuttle.razorpayclone.common.enums.PaymentStatus;
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
 public class Refund {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    UUID id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  UUID id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "payment_id", nullable = false)
-    Payment payment;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "payment_id", nullable = false)
+  Payment payment;
 
-    UUID merchantId;
+  UUID merchantId;
 
-    @Embedded
-    Money amountPaise;
+  @Embedded Money amountPaise;
 
-    @Enumerated(EnumType.STRING)
-    PaymentStatus status;
+  @Enumerated(EnumType.STRING)
+  PaymentStatus status;
 
-    String bankReference;
+  String bankReference;
 
-    String errorCode;
+  String errorCode;
 
-    LocalDateTime processedAt;
+  LocalDateTime processedAt;
 }

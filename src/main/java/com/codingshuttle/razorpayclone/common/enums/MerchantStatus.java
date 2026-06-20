@@ -1,4 +1,3 @@
 package com.codingshuttle.razorpayclone.common.enums;
 
-public enum MerchantStatus {
-}
+public enum MerchantStatus {}

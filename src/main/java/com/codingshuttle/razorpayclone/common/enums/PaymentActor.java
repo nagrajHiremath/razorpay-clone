@@ -1,4 +1,3 @@
 package com.codingshuttle.razorpayclone.common.enums;
 
-public enum PaymentActor {
-}
+public enum PaymentActor {}

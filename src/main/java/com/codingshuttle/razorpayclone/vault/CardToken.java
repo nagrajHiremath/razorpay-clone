@@ -1,24 +1,23 @@
 package com.codingshuttle.razorpayclone.vault;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
 public class CardToken {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    UUID id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  UUID id;
 
-    String token;
+  String token;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "vault_card_id")
-    VaultCard vaultCard;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "vault_card_id")
+  VaultCard vaultCard;
 
-    UUID customerId;
-    UUID merchantId;
+  UUID customerId;
+  UUID merchantId;
 
-    LocalDateTime createdAt;
+  LocalDateTime createdAt;
 }
