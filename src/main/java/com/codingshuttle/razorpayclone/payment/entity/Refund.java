@@ -1,4 +1,4 @@
-package com.codingshuttle.razorpayclone.payment;
+package com.codingshuttle.razorpayclone.payment.entity;
 
 import com.codingshuttle.razorpayclone.common.entity.Money;
 import com.codingshuttle.razorpayclone.common.enums.PaymentStatus;

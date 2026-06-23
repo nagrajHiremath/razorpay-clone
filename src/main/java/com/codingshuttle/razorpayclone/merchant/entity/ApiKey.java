@@ -1,10 +1,18 @@
 package com.codingshuttle.razorpayclone.merchant.entity;
 
+import com.codingshuttle.razorpayclone.common.enums.Environment;
 import jakarta.persistence.*;
 import java.time.Instant;
+import java.time.LocalTime;
 import java.util.UUID;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@Builder
 public class ApiKey {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
@@ -18,9 +26,11 @@ public class ApiKey {
   String keyId;
 
   String keySecretHash;
+  String previousKeySecretHash;
   String webHookSecretHash;
-  String environment;
+  Environment environment;
   Boolean enabled;
   Instant lastUsedAt;
-  Instant gracePeriodExpiresAt;
+  Instant rotatedAt;
+  LocalTime gracePeriodExpiresAt;
 }

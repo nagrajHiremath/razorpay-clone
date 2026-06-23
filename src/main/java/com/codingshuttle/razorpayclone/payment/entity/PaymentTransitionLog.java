@@ -1,4 +1,4 @@
-package com.codingshuttle.razorpayclone.payment;
+package com.codingshuttle.razorpayclone.payment.entity;
 
 import com.codingshuttle.razorpayclone.common.enums.PaymentActor;
 import com.codingshuttle.razorpayclone.common.enums.PaymentEvent;

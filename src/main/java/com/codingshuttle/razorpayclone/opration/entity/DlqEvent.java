@@ -1,4 +1,4 @@
-package com.codingshuttle.razorpayclone.opration;
+package com.codingshuttle.razorpayclone.opration.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
@@ -6,7 +6,6 @@ import java.util.UUID;
 
 @Entity
 public class DlqEvent {
-
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   UUID id;

@@ -1,4 +1,4 @@
-package com.codingshuttle.razorpayclone.vault;
+package com.codingshuttle.razorpayclone.vault.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

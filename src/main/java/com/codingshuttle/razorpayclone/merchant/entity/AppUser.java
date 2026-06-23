@@ -1,8 +1,17 @@
 package com.codingshuttle.razorpayclone.merchant.entity;
 
+import com.codingshuttle.razorpayclone.common.enums.UserRole;
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.UUID;
 
+@Entity
+@Builder
+@Getter
+@Setter
 public class AppUser {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
@@ -14,5 +23,5 @@ public class AppUser {
 
   String email;
   String passwordHash;
-  String role;
+  UserRole role;
 }

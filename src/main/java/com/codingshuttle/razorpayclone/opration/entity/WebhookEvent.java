@@ -1,4 +1,4 @@
-package com.codingshuttle.razorpayclone.opration;
+package com.codingshuttle.razorpayclone.opration.entity;
 
 import com.codingshuttle.razorpayclone.common.enums.PaymentEvent;
 import jakarta.persistence.*;

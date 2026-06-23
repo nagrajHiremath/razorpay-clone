@@ -1,4 +1,4 @@
-package com.codingshuttle.razorpayclone.opration;
+package com.codingshuttle.razorpayclone.opration.entity;
 
 import jakarta.persistence.Embeddable;
 import java.util.UUID;

@@ -1,39 +1,44 @@
-package com.codingshuttle.razorpayclone.payment;
+package com.codingshuttle.razorpayclone.payment.entity;
 
 import com.codingshuttle.razorpayclone.common.entity.Money;
-import com.codingshuttle.razorpayclone.common.enums.PaymentStatus;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Map;
-import java.util.Objects;
 import java.util.UUID;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
 @Entity
-public class OrderRecord {
+@Table(name = "payment")
+public class Payment {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   UUID id;
 
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "order_id", nullable = false)
+  OrderRecord orderRecord;
+
+  @Column(nullable = false)
   UUID merchantId;
+
+  @Embedded Money amount;
 
   String idempotencyKey;
 
-  @Embedded Money amountPaise;
+  Long amountPaise;
 
-  @Enumerated(EnumType.STRING)
-  PaymentStatus status;
+  String status;
 
-  Integer attempts;
+  String method;
 
   @JdbcTypeCode(SqlTypes.JSON)
   @Column(columnDefinition = "jsonb")
-  Map<String, Objects> notes;
+  Map<String, Object> methodDetails;
 
-  LocalDateTime expiresAt;
+  LocalDateTime authorizedAt;
 
-  String createdBy;
+  LocalDateTime capturedAt;
 
-  String updatedBy;
+  LocalDateTime failedAt;
 }
