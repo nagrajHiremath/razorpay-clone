@@ -24,7 +24,6 @@ public class OrderServiceImpl implements OrderService {
         OrderRecord orderRecord = orderMapper.toOrderRecord(orderCreateRequest);
 
         orderRepository.save(orderRecord);
-
         return orderMapper.toOrderResponse(orderRecord);
     }
 }
